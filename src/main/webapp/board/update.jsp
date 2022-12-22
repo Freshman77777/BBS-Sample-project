@@ -18,32 +18,31 @@
             
             <!-- =================== main =================== -->
             <div class="col-sm-9">
-            	<h3><strong>게시글 수정</strong></h3>
+            	<h3><strong>게시글 쓰기</strong></h3>
             	<hr>
                 <div class="row">
 			        <div class="col-1"></div>
 			        <div class="col-10">
-			            <form action="/bbs/board/update" method="post">
-			            	<input type="hidden" name="bid" value="${board.bid}">
-			            	<input type="hidden" name="uid" value="${board.uid}">
+			            <form action="/bbs/board/write" method="post" enctype="multipart/form-data">
 			                <table class="table table-borderless">
 			                    <tr>
 			                        <td><label for="title">제목</label></td>
-			                        <td><input class="form-control" type="text" name="title" id="title" value="${board.title}"></td>
+			                        <td colspan="2"><input class="form-control" type="text" name="title" id="title"></td>
 			                    </tr>
 			                    <tr>
 			                        <td><label for="content">내용</label></td>
-			                        <td>
-			                        	<textarea class="form-control" name="content" id="content" rows="10">${board.content}</textarea>
+			                        <td colspan="2">
+			                        	<textarea class="form-control" name="content" id="content" rows="10"></textarea>
 			                        </td>
 			                    </tr>
 			                    <tr>
-			                        <td><label for="files">첨부파일</label></td>
-			                        <td><input class="form-control" type="text" name="files" id="files" value="${board.files}"></td>
+			                        <td><label for="file1">첨부파일</label></td>
+			                        <td><input class="form-control" type="file" name="file1" id="file1"></td>
+			                        <td><input class="form-control" type="file" name="file2" id="file2"></td>
 			                    </tr>
 			                    <tr>
-			                        <td colspan="2" style="text-align: center;">
-			                            <input class="btn btn-primary" type="submit" value="수정">
+			                        <td colspan="3" style="text-align: center;">
+			                            <input class="btn btn-primary" type="submit" value="제출">
 			                            <input class="btn btn-secondary" type="reset" value="취소">
 			                        </td>
 			                    </tr>
